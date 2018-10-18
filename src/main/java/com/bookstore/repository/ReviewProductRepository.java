@@ -1,8 +1,8 @@
-package com.baeldung.ecommerce.repository;
+package com.bookstore.repository;
 
-import com.baeldung.ecommerce.model.OrderProduct;
-import com.baeldung.ecommerce.model.OrderProductPK;
+import com.bookstore.model.ReviewProduct;
+import com.bookstore.model.ReviewProductPK;
 import org.springframework.data.repository.CrudRepository;
 
-public interface OrderProductRepository extends CrudRepository<OrderProduct, OrderProductPK> {
+public interface ReviewProductRepository extends CrudRepository<ReviewProduct, ReviewProductPK> {
 }

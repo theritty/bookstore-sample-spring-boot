@@ -7,35 +7,35 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
-public class Customer implements Serializable {
+public class Review implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long customerId;
+    private Long reviewId;
 
-    private String name;
+    private String text;
 
-    public Customer(Long customerId, String name) {
-        this.customerId = customerId;
-        this.name = name;
+    public Review(Long reviewId, String text) {
+        this.reviewId = reviewId;
+        this.text = text;
     }
 
-    public Customer() {
+    public Review() {
     }
 
-    public Long getCustomerId() {
-        return customerId;
+    public Long getReviewId() {
+        return reviewId;
     }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
+    public void setReviewId(Long reviewId) {
+        this.reviewId = reviewId;
     }
 
-    public String getName() {
-        return name;
+    public String getText() {
+        return text;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setText(String text) {
+        this.text = text;
     }
 }

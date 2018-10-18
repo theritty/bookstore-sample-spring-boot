@@ -1,22 +1,22 @@
-package com.baeldung.ecommerce.service;
+package com.bookstore.service;
 
-import com.baeldung.ecommerce.model.OrderProduct;
-import com.baeldung.ecommerce.repository.OrderProductRepository;
+import com.bookstore.model.ReviewProduct;
+import com.bookstore.repository.ReviewProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class OrderProductServiceImpl implements OrderProductService {
+public class ReviewProductServiceImpl implements ReviewProductService {
 
-    private OrderProductRepository orderProductRepository;
+    private ReviewProductRepository reviewProductRepository;
 
-    public OrderProductServiceImpl(OrderProductRepository orderProductRepository) {
-        this.orderProductRepository = orderProductRepository;
+    public ReviewProductServiceImpl(ReviewProductRepository reviewProductRepository) {
+        this.reviewProductRepository = reviewProductRepository;
     }
 
     @Override
-    public OrderProduct create(OrderProduct orderProduct) {
-        return this.orderProductRepository.save(orderProduct);
+    public ReviewProduct create(ReviewProduct reviewProduct) {
+        return this.reviewProductRepository.save(reviewProduct);
     }
 }

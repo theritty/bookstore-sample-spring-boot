@@ -2,56 +2,43 @@ package com.bookstore.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
 @Entity
-public class OrderProduct {
+public class ReviewProduct {
 
     @EmbeddedId
     @JsonIgnore
-    private OrderProductPK pk;
+    private ReviewProductPK pk;
 
-    @Column(nullable = false) private Integer quantity;
 
-    public OrderProduct() {
+    public ReviewProduct() {
         super();
     }
 
-    public OrderProduct(Order order, Product product, Integer quantity) {
-        pk = new OrderProductPK();
-        pk.setOrder(order);
+    public ReviewProduct(Product product, Customer customer, Review review) {
+        pk = new ReviewProductPK();
         pk.setProduct(product);
-        this.quantity = quantity;
+        pk.setCustomer(customer);
+        pk.setReview(review);
     }
+
 
     @Transient
-    public Product getProduct() {
-        return this.pk.getProduct();
+    public Customer getCustomer() {
+        return this.pk.getCustomer();
     }
 
-    @Transient
-    public Double getTotalPrice() {
-        return getProduct().getPrice() * getQuantity();
-    }
-
-    public OrderProductPK getPk() {
+    public ReviewProductPK getPk() {
         return pk;
     }
 
-    public void setPk(OrderProductPK pk) {
+    public void setPk(ReviewProductPK pk) {
         this.pk = pk;
     }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
 
     @Override
     public int hashCode() {
@@ -73,7 +60,7 @@ public class OrderProduct {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        OrderProduct other = (OrderProduct) obj;
+        ReviewProduct other = (ReviewProduct) obj;
         if (pk == null) {
             if (other.pk != null) {
                 return false;

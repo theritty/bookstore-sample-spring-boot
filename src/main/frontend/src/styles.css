@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+.card-deck{
+    width: 100%;
+}
+
+.card-deck .card {
+    margin-bottom: 12px;
+    border: none;
+}
+
+.card-deck .card-footer {
+    background-color: white;
+    color: #737373;
+    font-size: 13px;
+}
+.card-deck .card-header {
+    background-color: white;
+    color: #737373;
+    font-size: 13px;
+}
+
+ul li button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: 0 0;
+    color: #737373;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+ul {
+    margin: 0px auto;
+}
+
+.btn-info-outline {
+    border-color: #086798;
+    border-radius: 73px;
+    font-size: xx-small;
+    color: #086798;
+    margin-left: 1px;
+    margin-bottom: 5px;
+}
+
+.discountText {
+    color: gray;
+    font-size: 13px;
+    text-decoration: line-through;
+}
+
+
+h1 , h2, h3, h4, h5, h6, p, span{
+    /*font-size: 28px;*/
+    font-weight: 200;
+    font-family: "ProximaNova","Helvetica","Arial",sans-serif;
+    color: #565656;
+}

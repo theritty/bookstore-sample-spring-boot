@@ -2,7 +2,9 @@ package com.bookstore.service;
 
 import com.bookstore.exception.ResourceNotFoundException;
 import com.bookstore.model.Customer;
+import com.bookstore.model.Review;
 import com.bookstore.repository.CustomerRepository;
+import com.bookstore.repository.ReviewRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,29 +12,29 @@ import javax.validation.constraints.NotNull;
 
 @Service
 @Transactional
-public class CustomerServiceImpl implements CustomerService {
+public class ReviewServiceImpl implements ReviewService {
 
-    private CustomerRepository customerRepository;
+    private ReviewRepository reviewRepository;
 
-    public CustomerServiceImpl(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
+    public ReviewServiceImpl(ReviewRepository reviewRepository) {
+        this.reviewRepository = reviewRepository;
     }
 
     @Override
-    public Customer getCustomer(long id) {
-        return customerRepository
+    public Review getReview(long id) {
+        return reviewRepository
                 .findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Review not found"));
     }
 
     @Override
-    public @NotNull Iterable<Customer> getAllCustomers() {
-        return customerRepository.findAll();
+    public @NotNull Iterable<Review> getAllReviews() {
+        return reviewRepository.findAll();
     }
 
     @Override
-    public Customer save(Customer customer) {
-        return customerRepository.save(customer);
+    public Review save(Review review) {
+        return reviewRepository.save(review);
     }
 
 }

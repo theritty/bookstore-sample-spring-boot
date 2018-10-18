@@ -1,13 +1,13 @@
-package com.baeldung.ecommerce.service;
+package com.bookstore.service;
 
-import com.baeldung.ecommerce.model.OrderProduct;
+import com.bookstore.model.ReviewProduct;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @Validated
-public interface OrderProductService {
+public interface ReviewProductService {
 
-    OrderProduct create(@NotNull(message = "The products for order cannot be null.") @Valid OrderProduct orderProduct);
+    ReviewProduct create(@NotNull(message = "The products for order cannot be null.") @Valid ReviewProduct reviewProduct);
 }

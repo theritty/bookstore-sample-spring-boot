@@ -1,0 +1,42 @@
+<h2></h2>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <a ><img class="card-img-top" src={{product.pictureUrl}} alt=""></a>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="row"><h3>{{product.name}}</h3></div>
+        <div class="row"><h6>{{product.author}}</h6></div>
+
+
+        <div class="row">
+            <h4 *ngIf="product.discount === 0.0">  <strong> ${{product.price}} </strong></h4>
+            <h4 *ngIf="product.discount !== 0.0">
+                <strong> ${{product.price*(1-product.discount)}}</strong>
+                &nbsp;&nbsp;&nbsp;
+                <span style="color: gray; font-size: 13px;">
+                List </span>  <span class="discountText"> ${{product.price}} </span>
+            </h4>
+        </div>
+        <div class="row">
+            <span>Qty: </span>
+            <select [(ngModel)]="quantity">
+                <option *ngFor="let i of createArray(product.remainingQuantity); let cnt = index;" [value]="cnt+1">{{cnt+1}}</option>
+            </select>
+            <button class="btn btn-primary">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <h4><strong> About This Item</strong></h4>
+    <p>
+        {{product.description}}
+    </p>
+</div>
+<div class="row">
+    <h4><strong> Reviews</strong></h4>
+</div>
+
+<div class="row" *ngFor="let review of product.reviewList">
+    <h4 style="padding-right: 30px;"> {{review.customer.name}}</h4> <p>{{review.text}}</p>
+</div>

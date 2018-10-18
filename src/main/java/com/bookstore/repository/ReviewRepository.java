@@ -1,7 +1,8 @@
 package com.bookstore.repository;
 
 import com.bookstore.model.Customer;
+import com.bookstore.model.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
+public interface ReviewRepository extends JpaRepository<Review, Long> {
 }

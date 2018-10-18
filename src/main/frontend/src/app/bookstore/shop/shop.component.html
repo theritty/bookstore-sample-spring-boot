@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="row card-deck">
+        <div class="col-lg-3 col-md-4" *ngFor="let prd of products">
+            <div class="card text-center" [routerLink]="['/product', prd.id]">
+                <div class="card-body">
+
+                    <div class="row" style="height: 31px">
+                        <button class="btn btn-info-outline" *ngIf="prd.newPrd "> NEW </button>
+                        <button class="btn btn-info-outline" *ngIf="prd.bestSellerPrd"> BEST SELLER </button>
+                    </div>
+
+                    <div class="row" >
+                        <a routerLink="/product/{{prd.id}}"><img class="card-img-top" src={{prd.pictureUrl}} alt=""></a>
+                    </div>
+
+                    <div class="row">
+                        <h6 style="height: 40px; text-align: left;margin-top: 5px;">{{prd.name}}</h6>
+                    </div>
+
+                    <div class="row" *ngIf="prd.discount === 0.0">
+                        <p>  <strong> ${{prd.price}} </strong></p>
+                    </div>
+                    <div class="row" *ngIf="prd.discount !== 0.0">
+                        <p> <strong> ${{prd.price*(1-prd.discount)}}</strong> &nbsp;&nbsp;&nbsp; <span style="color: gray; font-size: 13px;"> List </span>  <span class="discountText"> ${{prd.price}} </span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <ul class="pagination" *ngIf="paginationLast <= 1" >
+        <li *ngIf="paginationCurrent == paginationLast" >
+        </li>
+    </ul>
+
+    <ul class="pagination" *ngIf="paginationLast > 1" >
+
+        <li *ngIf="paginationCurrent > 1">
+            <button type="button" class="btn btn-default btn-sm" (click)="paginationCurrent = paginationCurrent - 1; loadProducts();"> Prev </button>
+        </li>
+        <li *ngIf="paginationCurrent > 2">
+            <button type="button" class="btn btn-default btn-sm" (click)="paginationCurrent = 1; loadProducts();">1</button>
+        </li>
+        <li *ngIf="paginationCurrent > 3">...</li>
+        <li *ngFor="let pageNum of middlePages" [class.pagination-current]="pageNum === paginationCurrent">
+            <button type="button" class="btn btn-default btn-sm" *ngIf="pageNum !== paginationCurrent; else noButton"
+                    (click)="paginationCurrent = pageNum; loadProducts();">{{pageNum}}</button>
+            <ng-template #noButton><button type="button" class="btn btn-default btn-sm" > <strong> {{pageNum}} </strong> </button> </ng-template>
+        </li>
+        <li *ngIf="paginationCurrent < paginationLast - 2">...</li>
+        <li *ngIf="paginationCurrent < paginationLast - 1">
+            <button type="button" class="btn btn-default btn-sm" (click)="paginationCurrent = paginationLast; loadProducts();">{{paginationLast}}</button>
+        </li>
+        <li *ngIf="paginationCurrent < paginationLast">
+            <button type="button" class="btn btn-default btn-sm" (click)="paginationCurrent = paginationCurrent+1; loadProducts();"> Next </button>
+        </li>
+    </ul>
+</div>

@@ -1,19 +1,20 @@
 package com.bookstore.service;
 
 import com.bookstore.model.Customer;
+import com.bookstore.model.Review;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Validated
-public interface CustomerService {
+public interface ReviewService {
 
-    @NotNull Iterable<Customer> getAllCustomers();
+    @NotNull Iterable<Review> getAllReviews();
 
-    Customer save(Customer customer);
+    Review save(Review review);
 
 
-    Customer getCustomer(@Min(value = 1L, message = "Invalid product ID.") long id);
+    Review getReview(@Min(value = 1L, message = "Invalid product ID.") long id);
 
 }
