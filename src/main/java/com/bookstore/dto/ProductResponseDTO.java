@@ -2,8 +2,6 @@ package com.bookstore.dto;
 
 import com.bookstore.model.Product;
 
-import java.util.List;
-
 public class ProductResponseDTO {
     private Long id;
 
@@ -28,6 +26,9 @@ public class ProductResponseDTO {
     private Long remainingQuantity;
 
     private Object[] reviewList;
+
+    public ProductResponseDTO() {
+    }
 
     public ProductResponseDTO(Product product) {
         this.id = product.getId();

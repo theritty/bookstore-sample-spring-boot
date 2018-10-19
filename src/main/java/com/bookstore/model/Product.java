@@ -42,7 +42,7 @@ public class Product {
     private Long remainingQuantity;
 
 
-    @OneToMany(mappedBy = "pk.product")
+    @OneToMany(mappedBy = "pk.product", fetch=FetchType.EAGER)
     @Valid
     private List<ReviewProduct> reviewProducts = new ArrayList<>();
 

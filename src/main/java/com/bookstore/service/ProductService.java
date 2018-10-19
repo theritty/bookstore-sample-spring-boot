@@ -25,8 +25,6 @@ public interface ProductService {
 
     Long getCountByCategory(long categoryId);
 
-
-
     Product create(@NotNull(message = "The order cannot be null.") @Valid Product product);
 
     void update(@NotNull(message = "The order cannot be null.") @Valid Product product);

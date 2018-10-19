@@ -1,7 +1,7 @@
 package com.bookstore.controller;
 
-import com.bookstore.model.Product;
 import com.bookstore.dto.ProductResponseDTO;
+import com.bookstore.model.Product;
 import com.bookstore.service.ProductService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +34,6 @@ public class ProductController {
     public ProductResponseDTO getProduct(@PathVariable("id") String id){
          return new ProductResponseDTO(productService.getProduct(Long.parseLong(id)));
     }
-
 
     @RequestMapping(value = "/api/productsByPage/{page}", method=RequestMethod.GET)
     public List<Product> getProductsByPage(@PathVariable("page") String page){

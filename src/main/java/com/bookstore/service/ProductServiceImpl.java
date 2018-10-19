@@ -1,11 +1,7 @@
 package com.bookstore.service;
 
-import com.bookstore.dto.CustomerResponseDTO;
-import com.bookstore.dto.ProductResponseDTO;
-import com.bookstore.dto.ReviewResponseDTO;
 import com.bookstore.exception.ResourceNotFoundException;
 import com.bookstore.model.Product;
-import com.bookstore.model.Review;
 import com.bookstore.repository.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -86,8 +82,5 @@ public class ProductServiceImpl implements ProductService {
     public void update(@NotNull(message = "The order cannot be null.") @Valid Product product) {
         productRepository.save(product);
     }
-
-
-
 
 }

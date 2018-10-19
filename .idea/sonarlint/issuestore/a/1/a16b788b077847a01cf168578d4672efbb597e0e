@@ -1,0 +1,7 @@
+
+esquid:CallToDeprecatedMethod"3Remove this use of "PageRequest"; it is deprecated.(ïêºÏùÿÿÿÿ8ÄÄÍ½è,
+esquid:CallToDeprecatedMethod"3Remove this use of "PageRequest"; it is deprecated.(ïêºÏùÿÿÿÿ8ÄÄÍ½è,
+esquid:UselessImportCheck"7Remove this unused import 'com.bookstore.model.Review'.(åà‚Ïüÿÿÿÿ8ÄÄÍ½è,
+psquid:UselessImportCheck"BRemove this unused import 'com.bookstore.dto.CustomerResponseDTO'.(Í£öùÿÿÿÿ8ÄÄÍ½è,
+isquid:UselessImportCheck"@Remove this unused import 'com.bookstore.dto.ReviewResponseDTO'.(½¤®ç8ÄÄÍ½è,
+jsquid:UselessImportCheck"ARemove this unused import 'com.bookstore.dto.ProductResponseDTO'.(ÄÊÎê8ÄÄÍ½è,

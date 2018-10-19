@@ -1,6 +1,5 @@
 package com.bookstore.repository;
 
-import com.bookstore.model.Customer;
 import com.bookstore.model.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 
